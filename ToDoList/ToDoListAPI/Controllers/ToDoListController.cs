@@ -11,9 +11,10 @@ namespace ToDoListAPI.Controllers
     {
         // GET: api/<ToDoListController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<ToDoTask> Get()
         {
-            return new string[] { "value1", "value2" };
+            return ToDoTask.ReadAll();
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/<ToDoListController>/5
