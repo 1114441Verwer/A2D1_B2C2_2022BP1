@@ -34,9 +34,11 @@ namespace ToDoListAPI.Controllers
         }
 
         // PUT api/<ToDoListController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{idToFinish}")]
+        public void Put(int idToFinish)
         {
+            ToDoTask finishTask = ToDoTask.Read(idToFinish);
+            finishTask.FinishTask();
         }
 
         // DELETE api/<ToDoListController>/5
