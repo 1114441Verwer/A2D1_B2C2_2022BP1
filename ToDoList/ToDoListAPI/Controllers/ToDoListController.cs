@@ -27,8 +27,10 @@ namespace ToDoListAPI.Controllers
 
         // POST api/<ToDoListController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] string description)
         {
+            ToDoTask newTask = new ToDoTask(description);
+            newTask.Create();
         }
 
         // PUT api/<ToDoListController>/5
