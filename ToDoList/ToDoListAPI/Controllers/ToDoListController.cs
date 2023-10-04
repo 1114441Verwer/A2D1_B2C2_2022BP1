@@ -45,6 +45,8 @@ namespace ToDoListAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            ToDoTask deleteTask = ToDoTask.Read(id);
+            deleteTask.Delete();
         }
     }
 }
